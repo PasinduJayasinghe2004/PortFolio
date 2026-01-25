@@ -1,16 +1,101 @@
-# React + Vite
+# Pasindu Jayasinghe - Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website showcasing my skills, education, and projects.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Visit the live site: [https://pasindujayasinghe2004.github.io/PortFolio/](https://pasindujayasinghe2004.github.io/PortFolio/)
 
-## React Compiler
+## 📁 Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```
+PortFolio/
+├── index.html          # Main HTML file
+├── styles.css          # Stylesheet
+├── script.js           # JavaScript functionality
+├── assets/             # Images, CV, and other assets
+│   ├── pasindu.jpg
+│   ├── uni_profile_93124.jpg
+│   ├── Uni_emblem.jpg
+│   ├── school.png
+│   └── Pasindu Jayasinghe CV.pdf
+└── .github/
+    └── workflows/
+        └── deploy.yml  # GitHub Pages deployment workflow
+```
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
+- **Modern UI**: Glassmorphism effects, smooth animations, and gradient accents
+- **Dynamic Greeting**: Time-based greeting message
+- **Typewriter Effect**: Animated text display
+- **Scroll Animations**: Elements fade in as you scroll
+- **Mobile Menu**: Hamburger menu for mobile navigation
+- **Downloadable CV**: Direct download link for resume
+
+## 🛠️ Technologies Used
+
+- HTML5
+- CSS3 (with CSS Variables and Animations)
+- Vanilla JavaScript
+- Google Fonts (Header & Outfit)
+- GitHub Pages for hosting
+
+## 📦 Deployment
+
+This site is automatically deployed to GitHub Pages using GitHub Actions. Any push to the `main` branch triggers a new deployment.
+
+### Manual Deployment Steps:
+
+1. **Enable GitHub Pages**:
+   - Go to repository Settings → Pages
+   - Under "Build and deployment", select "GitHub Actions" as the source
+
+2. **Push Changes**:
+   ```bash
+   git add .
+   git commit -m "Update portfolio"
+   git push origin main
+   ```
+
+3. **Wait for Deployment**:
+   - Check the Actions tab to see deployment progress
+   - Once complete, visit your site at `https://pasindujayasinghe2004.github.io/PortFolio/`
+
+## 🧪 Local Testing
+
+To test locally, simply open `index.html` in your web browser:
+
+```bash
+# Windows
+start index.html
+
+# macOS
+open index.html
+
+# Linux
+xdg-open index.html
+```
+
+Or use a local server:
+
+```bash
+# Python 3
+python -m http.server 8000
+
+# Node.js (with http-server)
+npx http-server
+```
+
+Then visit `http://localhost:8000` in your browser.
+
+## 📧 Contact
+
+- **Email**: madubashap98@gmail.com
+- **LinkedIn**: [pasindu-jayasinghe-376209353](https://linkedin.com/in/pasindu-jayasinghe-376209353)
+- **GitHub**: [pasindujayasinghe2004](https://github.com/pasindujayasinghe2004)
+
+## 📄 License
+
+This project is open source and available for personal use.
