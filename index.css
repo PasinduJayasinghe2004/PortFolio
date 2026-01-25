@@ -30,6 +30,10 @@ body {
   overflow-x: hidden;
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 /* --- Scrollbar Customization --- */
 ::-webkit-scrollbar {
   width: 10px;
@@ -449,7 +453,6 @@ img {
   border-radius: 20px;
   overflow: hidden;
   transition: 0.4s;
-  group;
 }
 
 .project-card:hover {

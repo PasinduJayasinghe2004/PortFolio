@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/public/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pasindu Jayasinghe - Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,11 +11,203 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Header:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <h1 class="logo">Pasindu<span class="highlight">.</span></h1>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="profile-wrapper fade-in">
+                <img src="/public/pasindu.jpg" alt="Profile Photo" class="profile-img" id="profileImg" />
+            </div>
+            <div class="text-wrapper fade-up">
+                <div id="greeting" class="greeting"></div>
+                <h2 class="name">Pasindu Jayasinghe</h2>
+                <div class="typewriter-container">
+                    <span class="typewriter-text" id="typewriterText"></span><span class="cursor">|</span>
+                </div>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="/public/Pasindu Jayasinghe CV.pdf" class="btn btn-secondary" download>Download CV</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h3 class="section-title fade-up">Skills & Expertise</h3>
+        <div class="skills-grid">
+            <div class="skill-card fade-up delay-100">
+                <div class="skill-icon">💻</div>
+                <h4>Frontend</h4>
+                <p>HTML, CSS, JS, React, JAVA</p>
+            </div>
+            <div class="skill-card fade-up delay-200">
+                <div class="skill-icon">⚙️</div>
+                <h4>Backend</h4>
+                <p>Node.js, Python, SQL, Mongo, APIs</p>
+            </div>
+            <div class="skill-card fade-up delay-300">
+                <div class="skill-icon">🛠️</div>
+                <h4>Tools</h4>
+                <p>Git, Docker, AWS, CI/CD, Agile</p>
+            </div>
+            <div class="skill-card fade-up delay-400">
+                <div class="skill-icon">🤝</div>
+                <h4>Soft Skills</h4>
+                <p>Leadership, Communication, Problem Solving</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <h3 class="section-title fade-up">Education</h3>
+        <div class="experience-timeline">
+            <div class="experience-item fade-up">
+                <div class="exp-img-wrapper">
+                    <img src="/public/uni_profile_93124.jpg" alt="University of Westminster" class="experience-img" />
+                </div>
+                <div class="experience-content">
+                    <h4>BSc (Hons) Computer Science</h4>
+                    <div class="institution">University of Westminster</div>
+                    <div class="date">2025 - Present</div>
+                    <p>Focusing on Algorithms, AI, Web Dev, and OOP.</p>
+                </div>
+            </div>
+            <div class="experience-item fade-up">
+                <div class="exp-img-wrapper">
+                    <img src="/public/Uni_emblem.jpg" alt="University of Moratuwa" class="experience-img" />
+                </div>
+                <div class="experience-content">
+                    <h4>BSc in Civil Engineering Tech</h4>
+                    <div class="institution">University of Moratuwa</div>
+                    <div class="date">2020 - 2024</div>
+                    <p>Specialized in construction management.</p>
+                </div>
+            </div>
+            <div class="experience-item fade-up">
+                <div class="exp-img-wrapper">
+                    <img src="/public/school.png" alt="St. Aloysius College" class="experience-img" />
+                </div>
+                <div class="experience-content">
+                    <h4>G.C.E. Advanced Level</h4>
+                    <div class="institution">St. Aloysius College</div>
+                    <div class="date">2010 - 2023</div>
+                    <p>Physical Science Stream.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h3 class="section-title fade-up">Featured Projects</h3>
+        <div class="projects-grid">
+            <div class="project-card fade-up delay-0">
+                <div class="project-img-wrapper">
+                    <div class="img-overlay"></div>
+                    <img src="/public/project-lms.jpg" alt="University LMS" class="project-img"
+                        onerror="this.style.display='none'" />
+                    <div class="project-icon">📚</div>
+                </div>
+                <div class="project-content">
+                    <h4>University LMS</h4>
+                    <div class="tech-stack">
+                        <span>PHP</span>
+                        <span>MySQL</span>
+                        <span>JS</span>
+                        <span>REACT JS</span>
+                    </div>
+                    <p>A complete Learning Management System for course content.</p>
+                </div>
+            </div>
+            <div class="project-card fade-up delay-100">
+                <div class="project-img-wrapper">
+                    <div class="img-overlay"></div>
+                    <img src="/public/project-theatrex.jpg" alt="TheatreX" class="project-img"
+                        onerror="this.style.display='none'" />
+                    <div class="project-icon">🏥</div>
+                </div>
+                <div class="project-content">
+                    <h4>TheatreX</h4>
+                    <div class="tech-stack">
+                        <span>REACT JS</span>
+                        <span>NODE JS</span>
+                        <span>EXPRESS JS</span>
+                        <span>MYSQL</span>
+                    </div>
+                    <p>Smart operation theatre scheduling system for hospitals.</p>
+                </div>
+            </div>
+            <div class="project-card fade-up delay-200">
+                <div class="project-img-wrapper">
+                    <div class="img-overlay"></div>
+                    <img src="/public/project-sustainability.jpg" alt="EcoFuture" class="project-img"
+                        onerror="this.style.display='none'" />
+                    <div class="project-icon">🌱</div>
+                </div>
+                <div class="project-content">
+                    <h4>EcoFuture</h4>
+                    <div class="tech-stack">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JS</span>
+                        <span>MYSQL</span>
+                        <span>REACT JS</span>
+                    </div>
+                    <p>Promoting sustainable development goals and practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <h3 class="section-title fade-up">Let's Connect</h3>
+        <p class="fade-up">Ready to start your next project?</p>
+        <div class="contact-links fade-up">
+            <a href="mailto:madubashap98@gmail.com" class="contact-pill">
+                <span>📧</span> email me
+            </a>
+            <a href="https://linkedin.com/in/pasindu-jayasinghe-376209353" target="_blank" rel="noopener noreferrer"
+                class="contact-pill">
+                <span>💼</span> linkedin
+            </a>
+            <a href="https://github.com/pasindujayasinghe2004" target="_blank" rel="noopener noreferrer"
+                class="contact-pill">
+                <span>💻</span> github
+            </a>
+        </div>
+    </section>
+
+    <script src="main.js"></script>
 </body>
 
 </html>
