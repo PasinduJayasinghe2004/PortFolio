@@ -384,6 +384,21 @@ img {
   color: #fff;
 }
 
+/* --- About Section --- */
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  background: var(--glass-bg);
+  padding: 3rem;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(5px);
+}
+
 /* --- Experience (Timeline) --- */
 .experience-timeline {
   position: relative;
