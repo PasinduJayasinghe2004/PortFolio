@@ -126,6 +126,9 @@ function setGreeting() {
 // INITIALIZE ALL FEATURES
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize WOW.js animations
+    new WOW().init();
+
     // Set dynamic greeting
     setGreeting();
 
