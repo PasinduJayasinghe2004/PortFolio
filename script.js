@@ -172,6 +172,79 @@ function initCardGlow() {
     });
 }
 
+function initDigitalRain() {
+    const canvas = document.createElement('canvas');
+    canvas.id = 'digitalRain';
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.zIndex = '-1';
+    canvas.style.opacity = '0.05';
+    canvas.style.pointerEvents = 'none';
+    document.body.appendChild(canvas);
+
+    const ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    const chars = '01ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
+    const fontSize = 16;
+    const columns = width / fontSize;
+    const drops = [];
+
+    for (let i = 0; i < columns; i++) {
+        drops[i] = 1;
+    }
+
+    function draw() {
+        ctx.fillStyle = 'rgba(5, 5, 16, 0.05)';
+        ctx.fillRect(0, 0, width, height);
+        ctx.fillStyle = '#00d4ff';
+        ctx.font = fontSize + 'px monospace';
+
+        for (let i = 0; i < drops.length; i++) {
+            const text = chars.charAt(Math.floor(Math.random() * chars.length));
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+            if (drops[i] * fontSize > height && Math.random() * 0.975 > 0.95) {
+                drops[i] = 0;
+            }
+            drops[i]++;
+        }
+    }
+
+    setInterval(draw, 33);
+    window.addEventListener('resize', () => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    });
+}
+
+function initTextScramble() {
+    const elements = document.querySelectorAll('.section-title, .name');
+    
+    elements.forEach(el => {
+        const originalText = el.innerText;
+        const chars = '!<>-_\\/[]{}—=+*^?#________';
+        
+        el.addEventListener('mouseenter', () => {
+            let iteration = 0;
+            const interval = setInterval(() => {
+                el.innerText = originalText.split('')
+                    .map((char, index) => {
+                        if(index < iteration) return originalText[index];
+                        return chars[Math.floor(Math.random() * chars.length)];
+                    })
+                    .join('');
+                
+                if(iteration >= originalText.length) clearInterval(interval);
+                iteration += 1 / 3;
+            }, 30);
+        });
+    });
+}
+
 // ============================================
 // INITIALIZE ALL FEATURES
 // ============================================
@@ -202,4 +275,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize AI Effects
     initAiEffects();
     initCardGlow();
+    initDigitalRain();
+    initTextScramble();
 });
