@@ -541,6 +541,30 @@ img {
   border: 1px solid rgba(0, 212, 255, 0.2);
 }
 
+.project-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.project-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  transition: 0.3s;
+}
+
+.project-link:hover {
+  color: var(--primary);
+}
+
+.project-link span {
+  font-size: 1.2rem;
+}
+
 /* --- Contact --- */
 .contact-section {
   text-align: center;
