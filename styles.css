@@ -668,6 +668,10 @@ img {
   transform: scale(1.05);
 }
 
+.contact-pill i {
+  font-size: 1.5rem;
+}
+
 /* --- Animations (Fade Up Classes) --- */
 .fade-up,
 .fade-in {
