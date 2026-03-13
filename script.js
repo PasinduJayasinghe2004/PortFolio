@@ -123,6 +123,56 @@ function setGreeting() {
 }
 
 // ============================================
+// AI EFFECTS (Cursor Glow & Card Lighting)
+// ============================================
+function initAiEffects() {
+    const cursor = document.getElementById('cursorGlow');
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    // Smooth cursor movement
+    function animateCursor() {
+        let distX = mouseX - cursorX;
+        let distY = mouseY - cursorY;
+        
+        cursorX = cursorX + (distX * 0.15);
+        cursorY = cursorY + (distY * 0.15);
+        
+        cursor.style.left = cursorX + 'px';
+        cursor.style.top = cursorY + 'px';
+        
+        requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Hover effect for links and buttons
+    const interactiveElements = document.querySelectorAll('a, button, .project-card, .skill-card');
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+}
+
+function initCardGlow() {
+    const cards = document.querySelectorAll('.project-card');
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+}
+
+// ============================================
 // INITIALIZE ALL FEATURES
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -148,4 +198,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize mobile menu
     initMobileMenu();
+
+    // Initialize AI Effects
+    initAiEffects();
+    initCardGlow();
 });
