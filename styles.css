@@ -432,6 +432,87 @@ img {
   color: #fff;
 }
 
+/* --- Progress Bars --- */
+.skills-bars {
+  margin-top: 5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.skill-bar {
+  position: relative;
+}
+
+.skill-name {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 0.8rem;
+  display: block;
+  letter-spacing: 0.5px;
+}
+
+.progress-line {
+  height: 8px;
+  width: 100%;
+  background: var(--glass-border);
+  border-radius: 10px;
+  position: relative;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.progress-fill {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+  width: 0; /* Animated later via JS */
+  transition: width 1.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.progress-fill::before {
+  content: attr(data-percent);
+  position: absolute;
+  right: 0;
+  top: -40px;
+  transform: translateX(50%);
+  background: #4a4a4a;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: opacity 0.5s ease 1s; /* fade in after bar animation */
+}
+
+/* Tooltip arrow */
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -13px;
+  transform: translateX(50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #4a4a4a transparent transparent transparent;
+  opacity: 0;
+  transition: opacity 0.5s ease 1s; /* fade in after bar animation */
+}
+
+.progress-fill.visible::before,
+.progress-fill.visible::after {
+  opacity: 1;
+}
+
 /* --- About Section --- */
 .about-content {
   max-width: 800px;

@@ -55,12 +55,17 @@ function initScrollAnimations() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
+                
+                if (entry.target.classList.contains('progress-fill')) {
+                    entry.target.style.width = entry.target.getAttribute('data-percent');
+                }
+
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    const animatedElements = document.querySelectorAll('.fade-up, .fade-in');
+    const animatedElements = document.querySelectorAll('.fade-up, .fade-in, .progress-fill');
     animatedElements.forEach(el => observer.observe(el));
 }
 
