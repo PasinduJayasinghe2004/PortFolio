@@ -1,26 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./assets/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pasindu Jayasinghe - Portfolio</title>
+    <meta name="description" content="Pasindu Jayasinghe - Full Stack Developer & Problem Solver" />
+    <meta name="theme-color" content="#0066ff" />
+    <title>Pasindu Jayasinghe - Full Stack Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Header:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="./styles.css">
 </head>
-
 <body>
-    <div class="cursor-glow" id="cursorGlow"></div>
-    <!-- Navbar -->
+    <!-- Navigation -->
+    <!-- Navigation -->
     <nav class="navbar" id="navbar">
-        <div class="container nav-container">
+        <div class="nav-container">
             <h1 class="logo">Pasindu<span class="highlight">.</span></h1>
             <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
                 <span class="bar"></span>
@@ -41,15 +37,16 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <div class="profile-wrapper fade-in wow animate__animated animate__fadeInLeft">
-                <img src="./assets/pasindu.jpg" alt="Profile Photo" class="profile-img" id="profileImg" />
+            <div class="profile-wrapper">
+                <img src="./assets/pasindu.jpg" alt="Pasindu Jayasinghe" class="profile-img" />
             </div>
-            <div class="text-wrapper fade-up wow animate__animated animate__fadeInRight">
-                <div id="greeting" class="greeting"></div>
-                <h2 class="name">Pasindu Jayasinghe</h2>
+            <div class="text-wrapper">
+                <p class="greeting" id="greeting"></p>
+                <h1 class="name">Pasindu Jayasinghe</h1>
                 <div class="typewriter-container">
-                    <span class="typewriter-text" id="typewriterText"></span><span class="cursor">|</span>
+                    <span class="typewriter-text" id="typewriterText"></span>
                 </div>
+                <p class="tagline">Full Stack Developer | Problem Solver | Tech Enthusiast</p>
                 <div class="hero-btns">
                     <a href="#contact" class="btn btn-primary">Get In Touch</a>
                     <a href="./assets/pasindu3.pdf" class="btn btn-secondary" download>Download CV</a>
@@ -57,16 +54,14 @@
             </div>
         </div>
         <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
+            <div class="mouse"><div class="wheel"></div></div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="section">
-        <h3 class="section-title fade-up wow animate__animated animate__fadeInDown">About Me</h3>
-        <div class="about-content fade-up delay-100 wow animate__animated animate__fadeInUp">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
             <p>
                 I am Pasindu Jayasinghe, a 21-year-old Full Stack Developer and Project Management enthusiast. Motivated Computer Science undergraduate at IIT with a strong foundation in software development, data structures, and algorithms. Passionate about leveraging technology to solve real-world problems through innovative solutions. Seeking opportunities to apply theoretical knowledge in practical settings, contribute to meaningful projects, and develop professional skills in a dynamic industry environment.
             </p>
@@ -75,31 +70,31 @@
 
     <!-- Skills Section -->
     <section id="skills" class="section">
-        <h3 class="section-title fade-up wow animate__animated animate__fadeInDown">Skills & Expertise</h3>
+        <h2 class="section-title">Skills & Expertise</h2>
         <div class="skills-grid">
-            <div class="skill-card fade-up delay-100 wow animate__animated animate__fadeInLeft">
+            <div class="skill-card">
                 <div class="skill-icon">💻</div>
-                <h4>Programming</h4>
+                <h3>Programming</h3>
                 <p>Java, Python, JavaScript, OOP</p>
             </div>
-            <div class="skill-card fade-up delay-200 wow animate__animated animate__fadeInUp">
+            <div class="skill-card">
                 <div class="skill-icon">🌐</div>
-                <h4>Web Development</h4>
+                <h3>Web Development</h3>
                 <p>HTML, CSS, React, Node.js, Express JS</p>
             </div>
-            <div class="skill-card fade-up delay-300 wow animate__animated animate__fadeInRight">
+            <div class="skill-card">
                 <div class="skill-icon">🗄️</div>
-                <h4>Databases</h4>
+                <h3>Databases</h3>
                 <p>MySQL, PostgreSQL, NoSQL</p>
             </div>
-            <div class="skill-card fade-up delay-400 wow animate__animated animate__fadeInUp">
+            <div class="skill-card">
                 <div class="skill-icon">🛠️</div>
-                <h4>Tools & Platforms</h4>
+                <h3>Tools & Platforms</h3>
                 <p>GitHub, Docker, Figma, VS Code, Vercel, Jira</p>
             </div>
         </div>
 
-        <div class="skills-bars fade-up wow animate__animated animate__fadeInUp">
+        <div class="skills-bars">
             <div class="skill-bar">
                 <div class="skill-name">React</div>
                 <div class="progress-line">
@@ -141,36 +136,36 @@
 
     <!-- Experience Section -->
     <section id="experience" class="section">
-        <h3 class="section-title fade-up wow animate__animated animate__fadeInDown">Education</h3>
+        <h2 class="section-title">Education</h2>
         <div class="experience-timeline">
-            <div class="experience-item fade-up wow animate__animated animate__fadeInLeft">
+            <div class="experience-item">
                 <div class="exp-img-wrapper">
-                    <img src="./assets/uni_profile_93124.jpg" alt="University of Westminster" class="experience-img" />
+                    <img src="./assets/uni_profile_93124.jpg" alt="Informatics Institute of Technology" class="experience-img" />
                 </div>
                 <div class="experience-content">
-                    <h4>BSc (Hons) Computer Science</h4>
+                    <h3>BSc (Hons) Computer Science</h3>
                     <div class="institution">Informatics Institute of Technology (IIT), Colombo</div>
                     <div class="date">2025 - Present</div>
                     <p>Second Year Student - Focusing on Software Development, Data Structures, and Algorithms.</p>
                 </div>
             </div>
-            <div class="experience-item fade-up wow animate__animated animate__fadeInRight">
+            <div class="experience-item">
                 <div class="exp-img-wrapper">
                     <img src="./assets/Uni_emblem.jpg" alt="University of Moratuwa" class="experience-img" />
                 </div>
                 <div class="experience-content">
-                    <h4>National Diploma in Civil Engineering Technology</h4>
+                    <h3>National Diploma in Civil Engineering Technology</h3>
                     <div class="institution">University of Moratuwa</div>
                     <div class="date">2025 - Present</div>
                     <p>Parallel studies in Civil Engineering Technology.</p>
                 </div>
             </div>
-            <div class="experience-item fade-up wow animate__animated animate__fadeInLeft">
+            <div class="experience-item">
                 <div class="exp-img-wrapper">
                     <img src="./assets/school.png" alt="St. Aloysius College" class="experience-img" />
                 </div>
                 <div class="experience-content">
-                    <h4>G.C.E. Advanced Level</h4>
+                    <h3>G.C.E. Advanced Level</h3>
                     <div class="institution">St. Aloysius College, Galle</div>
                     <div class="date">2010 - 2023</div>
                     <p>Physical Science Stream.</p>
@@ -181,17 +176,15 @@
 
     <!-- Projects Section -->
     <section id="projects" class="section">
-        <h3 class="section-title fade-up wow animate__animated animate__fadeInDown">Featured Projects</h3>
+        <h2 class="section-title">Featured Projects</h2>
         <div class="projects-grid">
-            <div class="project-card fade-up delay-0 wow animate__animated animate__zoomIn">
+            <div class="project-card">
                 <div class="project-img-wrapper">
-                    <div class="img-overlay"></div>
-                    <img src="./assets/project-lms.jpg" alt="University LMS" class="project-img"
-                        onerror="this.style.display='none'" />
+                    <img src="./assets/project-lms.jpg" alt="University LMS Platform" class="project-img" />
                     <div class="project-icon">📚</div>
                 </div>
                 <div class="project-content">
-                    <h4>University LMS Platform</h4>
+                    <h3>University LMS Platform</h3>
                     <div class="tech-stack">
                         <span>HTML</span>
                         <span>CSS</span>
@@ -207,15 +200,13 @@
                     </div>
                 </div>
             </div>
-            <div class="project-card fade-up delay-100 wow animate__animated animate__zoomIn">
+            <div class="project-card">
                 <div class="project-img-wrapper">
-                    <div class="img-overlay"></div>
-                    <img src="./assets/project-theatrex.jpg" alt="TheatreX" class="project-img"
-                        onerror="this.style.display='none'" />
+                    <img src="./assets/project-theatrex.jpg" alt="TheatreX - Hospital Theatre Scheduling" class="project-img" />
                     <div class="project-icon">🏥</div>
                 </div>
                 <div class="project-content">
-                    <h4>TheatreX - Hospital Theatre Scheduling</h4>
+                    <h3>TheatreX - Hospital Theatre Scheduling</h3>
                     <div class="tech-stack">
                         <span>React</span>
                         <span>Node.js</span>
@@ -236,15 +227,13 @@
                     </div>
                 </div>
             </div>
-            <div class="project-card fade-up delay-200 wow animate__animated animate__zoomIn">
+            <div class="project-card">
                 <div class="project-img-wrapper">
-                    <div class="img-overlay"></div>
-                    <img src="./assets/project-sustainability.jpg" alt="EcoFuture" class="project-img"
-                        onerror="this.style.display='none'" />
+                    <img src="./assets/project-sustainability.jpg" alt="EcoFuture Web Development" class="project-img" />
                     <div class="project-icon">🌱</div>
                 </div>
                 <div class="project-content">
-                    <h4>EcoFuture Web Development</h4>
+                    <h3>EcoFuture Web Development</h3>
                     <div class="tech-stack">
                         <span>HTML</span>
                         <span>CSS</span>
@@ -269,9 +258,9 @@
 
     <!-- Contact Section -->
     <section id="contact" class="section contact-section">
-        <h3 class="section-title fade-up wow animate__animated animate__fadeInDown">Let's Connect</h3>
-        <p class="fade-up wow animate__animated animate__fadeInUp">Ready to discuss opportunities or collaborate on projects?</p>
-        <div class="contact-links fade-up wow animate__animated animate__fadeInUp">
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="contact-intro">Ready to discuss opportunities or collaborate on projects?</p>
+        <div class="contact-links">
             <a href="mailto:pasindu.20241670@iit.ac.lk" class="contact-pill">
                 <i class="fa-solid fa-envelope"></i> Email
             </a>
@@ -290,16 +279,15 @@
     </section>
 
     <!-- Additional Projects Section -->
-    <section id="more-projects" class="section" style="background: var(--bg-darker);">
-        <h3 class="section-title fade-up wow animate__animated animate__fadeInDown">Additional Projects</h3>
-        <div class="projects-grid fade-up wow animate__animated animate__fadeInUp">
-            <div class="project-card fade-up delay-0 wow animate__animated animate__zoomIn">
+    <section id="more-projects" class="section more-projects-section">
+        <h2 class="section-title">Additional Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
                 <div class="project-img-wrapper">
-                    <div class="img-overlay"></div>
                     <div class="project-icon">🛒</div>
                 </div>
-                <div class="project-content fade-up">
-                    <h4>E-Commerce Platform</h4>
+                <div class="project-content">
+                    <h3>E-Commerce Platform</h3>
                     <div class="tech-stack">
                         <span>React</span>
                         <span>Node.js</span>
@@ -315,13 +303,12 @@
                     </div>
                 </div>
             </div>
-            <div class="project-card fade-up delay-100 wow animate__animated animate__zoomIn">
+            <div class="project-card">
                 <div class="project-img-wrapper">
-                    <div class="img-overlay"></div>
                     <div class="project-icon">💪</div>
                 </div>
-                <div class="project-content fade-up">
-                    <h4>Fitness Gym Membership System</h4>
+                <div class="project-content">
+                    <h3>Fitness Gym Membership System</h3>
                     <div class="tech-stack">
                         <span>Java</span>
                         <span>OOP</span>
