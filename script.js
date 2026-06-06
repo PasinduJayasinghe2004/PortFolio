@@ -1,75 +1,54 @@
-/* Portfolio JavaScript - Lightweight & Dependency-Free */
+/* Portfolio JavaScript — Senior Engineer Edition */
 
 // ============================================
-// TYPEWRITER EFFECT
+// COUNTER ANIMATION
 // ============================================
-class Typewriter {
-  constructor(element, texts, speed = 100, pause = 2000) {
-    this.element = element;
-    this.texts = texts;
-    this.speed = speed;
-    this.pause = pause;
-    this.textIndex = 0;
-    this.charIndex = 0;
-    this.isDeleting = false;
-    this.start();
-  }
+function animateCounters() {
+  const counters = document.querySelectorAll('.metric-value[data-count]');
+  counters.forEach(counter => {
+    const target = parseInt(counter.getAttribute('data-count'));
+    const duration = 1800;
+    const start = performance.now();
 
-  start() {
-    this.type();
-  }
-
-  type() {
-    const currentText = this.texts[this.textIndex];
-
-    if (this.isDeleting) {
-      this.element.textContent = currentText.substring(0, this.charIndex - 1);
-      this.charIndex--;
-    } else {
-      this.element.textContent = currentText.substring(0, this.charIndex + 1);
-      this.charIndex++;
+    function update(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      counter.textContent = Math.floor(eased * target);
+      if (progress < 1) requestAnimationFrame(update);
     }
-
-    let typeSpeed = this.isDeleting ? this.speed / 2 : this.speed;
-
-    if (!this.isDeleting && this.charIndex === currentText.length) {
-      typeSpeed = this.pause;
-      this.isDeleting = true;
-    } else if (this.isDeleting && this.charIndex === 0) {
-      this.isDeleting = false;
-      this.textIndex = (this.textIndex + 1) % this.texts.length;
-    }
-
-    setTimeout(() => this.type(), typeSpeed);
-  }
+    requestAnimationFrame(update);
+  });
 }
 
 // ============================================
-// SCROLL ANIMATIONS
+// SCROLL ANIMATIONS (Intersection Observer)
 // ============================================
 function initScrollAnimations() {
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px"
-  };
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        
-        if (entry.target.classList.contains('progress-fill')) {
-          const percent = entry.target.getAttribute('data-percent');
-          entry.target.style.setProperty('--width', percent);
-        }
-
         observer.unobserve(entry.target);
       }
     });
-  }, observerOptions);
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-  const animatedElements = document.querySelectorAll('.fade-up, .fade-in, .progress-fill');
-  animatedElements.forEach(el => observer.observe(el));
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Counter animation on hero visible
+  const heroMetrics = document.querySelector('.hero-metrics');
+  if (heroMetrics) {
+    const metricsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounters();
+          metricsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    metricsObserver.observe(heroMetrics);
+  }
 }
 
 // ============================================
@@ -77,34 +56,28 @@ function initScrollAnimations() {
 // ============================================
 function initNavbarScroll() {
   const navbar = document.getElementById('navbar');
-  
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
   });
 }
 
 // ============================================
-// MOBILE MENU TOGGLE
+// MOBILE MENU
 // ============================================
 function initMobileMenu() {
-  const mobileToggle = document.getElementById('mobileToggle');
+  const toggle = document.getElementById('mobileToggle');
   const navLinks = document.getElementById('navLinks');
-  const navLinkItems = document.querySelectorAll('.nav-link');
+  const links = document.querySelectorAll('.nav-link');
 
-  mobileToggle.addEventListener('click', () => {
-    mobileToggle.classList.toggle('active');
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('active');
     navLinks.classList.toggle('active');
     document.body.classList.toggle('no-scroll');
   });
 
-  // Close menu when clicking on a link
-  navLinkItems.forEach(link => {
+  links.forEach(link => {
     link.addEventListener('click', () => {
-      mobileToggle.classList.remove('active');
+      toggle.classList.remove('active');
       navLinks.classList.remove('active');
       document.body.classList.remove('no-scroll');
     });
@@ -112,56 +85,32 @@ function initMobileMenu() {
 }
 
 // ============================================
-// DYNAMIC GREETING
+// ADD FADE-UP CLASSES TO SECTIONS
 // ============================================
-function setGreeting() {
-  const greetingElement = document.getElementById('greeting');
-  const hour = new Date().getHours();
-  
-  let greetingText;
-  if (hour >= 5 && hour < 12) {
-    greetingText = "Good Morning, I'm";
-  } else if (hour >= 12 && hour < 18) {
-    greetingText = "Good Afternoon, I'm";
-  } else {
-    greetingText = "Good Evening, I'm";
-  }
-  
-  greetingElement.textContent = greetingText;
+function addScrollClasses() {
+  const selectors = [
+    '.about-visual', '.about-text',
+    '.expertise-card',
+    '.timeline-item',
+    '.project-featured', '.project-card',
+    '.contact-card'
+  ];
+  selectors.forEach(sel => {
+    document.querySelectorAll(sel).forEach((el, i) => {
+      el.classList.add('fade-up');
+      el.style.transitionDelay = `${i * 0.08}s`;
+    });
+  });
 }
 
 // ============================================
-// INITIALIZE ALL FEATURES
+// SMOOTH SCROLL
 // ============================================
-document.addEventListener('DOMContentLoaded', () => {
-  // Set dynamic greeting
-  setGreeting();
-
-  // Initialize typewriter effect
-  const typewriterElement = document.getElementById('typewriterText');
-  if (typewriterElement) {
-    new Typewriter(typewriterElement, [
-      'Full Stack Developer',
-      'Problem Solver',
-      'Tech Enthusiast'
-    ]);
-  }
-
-  // Initialize scroll animations
-  initScrollAnimations();
-
-  // Initialize navbar scroll effect
-  initNavbarScroll();
-
-  // Initialize mobile menu
-  initMobileMenu();
-
-  // Smooth scroll for anchor links
+function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const id = this.getAttribute('href');
       if (id === '#') return;
-      
       const target = document.querySelector(id);
       if (target) {
         e.preventDefault();
@@ -169,4 +118,15 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+}
+
+// ============================================
+// INIT
+// ============================================
+document.addEventListener('DOMContentLoaded', () => {
+  addScrollClasses();
+  initScrollAnimations();
+  initNavbarScroll();
+  initMobileMenu();
+  initSmoothScroll();
 });

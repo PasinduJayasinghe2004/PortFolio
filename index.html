@@ -4,22 +4,32 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Pasindu Jayasinghe - Full Stack Developer & Problem Solver" />
-    <meta name="theme-color" content="#0066ff" />
-    <title>Pasindu Jayasinghe - Full Stack Developer</title>
+    <meta name="description"
+        content="Pasindu Jayasinghe — Senior Full Stack Engineer specializing in scalable web architectures, distributed systems, and high-performance applications." />
+    <meta name="theme-color" content="#e8e4df" />
+    <meta name="author" content="Pasindu Jayasinghe" />
+    <meta property="og:title" content="Pasindu Jayasinghe — Senior Software Engineer" />
+    <meta property="og:description"
+        content="Building production-grade systems that scale. Full Stack Engineer with deep expertise in React, Node.js, Java, and cloud-native architectures." />
+    <meta property="og:type" content="website" />
+    <title>Pasindu Jayasinghe — Senior Software Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
-    <!-- Navigation -->
+    <!-- Grain Overlay -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <h1 class="logo">Pasindu<span class="highlight">.</span></h1>
+            <a href="#home" class="logo">PJ<span class="logo-dot">.</span></a>
             <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -28,295 +38,431 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#expertise" class="nav-link">Expertise</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#projects" class="nav-link">Work</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
+            <a href="#contact" class="nav-cta">Let's Talk</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="profile-wrapper">
-                <img src="./assets/pasindu.jpg" alt="Pasindu Jayasinghe" class="profile-img" />
+        <div class="hero-container">
+            <div class="hero-badge">
+                <span class="status-dot"></span>
+                <span>Available for opportunities</span>
             </div>
-            <div class="text-wrapper">
-                <p class="greeting" id="greeting"></p>
-                <h1 class="name">Pasindu Jayasinghe</h1>
-                <div class="typewriter-container">
-                    <span class="typewriter-text" id="typewriterText"></span>
+            <h1 class="hero-title">
+                <span class="hero-line">I build systems</span>
+                <span class="hero-line hero-line--accent">that <em>scale</em>.</span>
+            </h1>
+            <p class="hero-subtitle">
+                Senior Full Stack Engineer crafting production-grade web architectures with
+                <strong>React</strong>, <strong>Node.js</strong>, <strong>Java</strong>, and cloud-native
+                infrastructure.
+            </p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">
+                    View My Work
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+                <a href="./assets/pasindu3.pdf" class="btn btn-secondary" download>Download Résumé</a>
+            </div>
+            <div class="hero-metrics">
+                <div class="metric">
+                    <span class="metric-value" data-count="10">0</span><span class="metric-suffix">+</span>
+                    <span class="metric-label">Production Projects</span>
                 </div>
-                <p class="tagline">Full Stack Developer | Problem Solver | Tech Enthusiast</p>
-                <div class="hero-btns">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="./assets/pasindu3.pdf" class="btn btn-secondary" download>Download CV</a>
+                <div class="metric-divider"></div>
+                <div class="metric">
+                    <span class="metric-value" data-count="5">0</span><span class="metric-suffix">+</span>
+                    <span class="metric-label">Technologies Mastered</span>
+                </div>
+                <div class="metric-divider"></div>
+                <div class="metric">
+                    <span class="metric-value" data-count="3">0</span><span class="metric-suffix">+</span>
+                    <span class="metric-label">Years Building Software</span>
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
+        <div class="scroll-cue">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <p>
-                I am Pasindu Jayasinghe, a 21-year-old Full Stack Developer and Project Management enthusiast. Motivated
-                Computer Science undergraduate at IIT with a strong foundation in software development, data structures,
-                and algorithms. Passionate about leveraging technology to solve real-world problems through innovative
-                solutions. Seeking opportunities to apply theoretical knowledge in practical settings, contribute to
-                meaningful projects, and develop professional skills in a dynamic industry environment.
-            </p>
+    <section id="about" class="section about-section">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-visual">
+                    <div class="about-img-frame">
+                        <img src="./assets/pasindu.jpg" alt="Pasindu Jayasinghe" class="about-img" />
+                    </div>
+                    <div class="about-card-float">
+                        <span class="card-float-icon">
+                            <i class="fa-solid fa-code"></i>
+                        </span>
+                        <span>Engineering Excellence</span>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <span class="section-label">About</span>
+                    <h2 class="section-heading">Engineering software<br>with <em>precision</em> and <em>purpose</em>.
+                    </h2>
+                    <p class="about-description">
+                        I'm Pasindu Jayasinghe — a full stack engineer who approaches every system with an
+                        architect's mindset. I specialize in designing scalable, maintainable applications from the
+                        database layer up to the user interface. My work spans healthcare platforms serving
+                        real clinical workflows, luxury e-commerce systems processing live transactions, and
+                        AI-integrated study tools that push the boundaries of EdTech.
+                    </p>
+                    <p class="about-description">
+                        I believe great software is invisible — users should feel the experience, not fight the
+                        technology. I obsess over clean architecture, rigorous testing, and shipping code that
+                        the next engineer will actually want to maintain.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fa-solid fa-diagram-project"></i>
+                            <span>System Architecture</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>Secure by Design</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fa-solid fa-gauge-high"></i>
+                            <span>Performance-First</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fa-solid fa-users-gear"></i>
+                            <span>Team Leadership</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <h2 class="section-title">Skills & Expertise</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <div class="skill-icon">💻</div>
-                <h3>Programming</h3>
-                <p>Java, Python, JavaScript, OOP</p>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">🌐</div>
-                <h3>Web Development</h3>
-                <p>HTML, CSS, React, Node.js, Express JS</p>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">🗄️</div>
-                <h3>Databases</h3>
-                <p>MySQL, PostgreSQL, NoSQL</p>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">🛠️</div>
-                <h3>Tools & Platforms</h3>
-                <p>GitHub, Docker, Figma, VS Code, Vercel, Jira</p>
-            </div>
-        </div>
+    <!-- Expertise Section -->
+    <section id="expertise" class="section expertise-section">
+        <div class="section-container">
+            <span class="section-label">Technical Expertise</span>
+            <h2 class="section-heading section-heading--center">My engineering<br><em>toolkit</em>.</h2>
 
-        <div class="skills-bars">
-            <div class="skill-bar">
-                <div class="skill-name">React</div>
-                <div class="progress-line">
-                    <span class="progress-fill" data-percent="80%"></span>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <div class="expertise-card-header">
+                        <div class="expertise-icon">
+                            <i class="fa-brands fa-react"></i>
+                        </div>
+                        <h3>Frontend Engineering</h3>
+                    </div>
+                    <p>Building responsive, accessible interfaces with component-driven architecture and state
+                        management at scale.</p>
+                    <div class="expertise-tags">
+                        <span>React</span>
+                        <span>Next.js</span>
+                        <span>TypeScript</span>
+                        <span>HTML/CSS</span>
+                        <span>Responsive Design</span>
+                    </div>
                 </div>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-name">Node.js & Express</div>
-                <div class="progress-line">
-                    <span class="progress-fill" data-percent="75%"></span>
+
+                <div class="expertise-card">
+                    <div class="expertise-card-header">
+                        <div class="expertise-icon">
+                            <i class="fa-brands fa-node-js"></i>
+                        </div>
+                        <h3>Backend & APIs</h3>
+                    </div>
+                    <p>Designing RESTful services with clean separation of concerns, authentication, and robust
+                        error handling.</p>
+                    <div class="expertise-tags">
+                        <span>Node.js</span>
+                        <span>Express</span>
+                        <span>Java</span>
+                        <span>Spring Boot</span>
+                        <span>JWT / OAuth</span>
+                    </div>
                 </div>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-name">Java</div>
-                <div class="progress-line">
-                    <span class="progress-fill" data-percent="85%"></span>
+
+                <div class="expertise-card">
+                    <div class="expertise-card-header">
+                        <div class="expertise-icon">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <h3>Data & Infrastructure</h3>
+                    </div>
+                    <p>Schema design, query optimization, and deployment pipelines that keep systems reliable under
+                        real-world load.</p>
+                    <div class="expertise-tags">
+                        <span>PostgreSQL</span>
+                        <span>MySQL</span>
+                        <span>MongoDB</span>
+                        <span>Docker</span>
+                        <span>CI/CD</span>
+                    </div>
                 </div>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-name">PostgreSQL & MySQL</div>
-                <div class="progress-line">
-                    <span class="progress-fill" data-percent="80%"></span>
-                </div>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-name">Python</div>
-                <div class="progress-line">
-                    <span class="progress-fill" data-percent="70%"></span>
-                </div>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-name">System Design & UI/UX</div>
-                <div class="progress-line">
-                    <span class="progress-fill" data-percent="75%"></span>
+
+                <div class="expertise-card">
+                    <div class="expertise-card-header">
+                        <div class="expertise-icon">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h3>Engineering Practices</h3>
+                    </div>
+                    <p>Automated testing, code review culture, documentation-first approach, and agile delivery
+                        cadence.</p>
+                    <div class="expertise-tags">
+                        <span>Jest</span>
+                        <span>Git</span>
+                        <span>Jira</span>
+                        <span>Figma</span>
+                        <span>Agile / Scrum</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="section">
-        <h2 class="section-title">Education</h2>
-        <div class="experience-timeline">
-            <div class="experience-item">
-                <div class="exp-img-wrapper">
-                    <img src="./assets/uni_profile_93124.jpg" alt="Informatics Institute of Technology"
-                        class="experience-img" />
+    <section id="experience" class="section experience-section">
+        <div class="section-container">
+            <span class="section-label">Experience & Education</span>
+            <h2 class="section-heading">Where I've <em>grown</em>.</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-org">
+                                <img src="./assets/uni_profile_93124.jpg" alt="IIT" class="timeline-org-img" />
+                                <div>
+                                    <h3>BSc (Hons) Computer Science</h3>
+                                    <span class="timeline-company">Informatics Institute of Technology (IIT),
+                                        Colombo</span>
+                                </div>
+                            </div>
+                            <span class="timeline-date">2025 — Present</span>
+                        </div>
+                        <p>Second-year undergraduate specializing in Software Engineering, Data Structures & Algorithms,
+                            and Distributed Systems. Building production-grade projects as part of coursework including
+                            full-stack healthcare and e-commerce platforms.</p>
+                    </div>
                 </div>
-                <div class="experience-content">
-                    <h3>BSc (Hons) Computer Science</h3>
-                    <div class="institution">Informatics Institute of Technology (IIT), Colombo</div>
-                    <div class="date">2025 - Present</div>
-                    <p>Second Year Student - Focusing on Software Development, Data Structures, and Algorithms.</p>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-org">
+                                <img src="./assets/Uni_emblem.jpg" alt="University of Moratuwa"
+                                    class="timeline-org-img" />
+                                <div>
+                                    <h3>National Diploma — Civil Engineering Technology</h3>
+                                    <span class="timeline-company">University of Moratuwa</span>
+                                </div>
+                            </div>
+                            <span class="timeline-date">2025 — Present</span>
+                        </div>
+                        <p>Parallel interdisciplinary studies in Civil Engineering Technology, strengthening analytical
+                            problem-solving capabilities and cross-domain engineering thinking.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="experience-item">
-                <div class="exp-img-wrapper">
-                    <img src="./assets/Uni_emblem.jpg" alt="University of Moratuwa" class="experience-img" />
-                </div>
-                <div class="experience-content">
-                    <h3>National Diploma in Civil Engineering Technology</h3>
-                    <div class="institution">University of Moratuwa</div>
-                    <div class="date">2025 - Present</div>
-                    <p>Parallel studies in Civil Engineering Technology.</p>
-                </div>
-            </div>
-            <div class="experience-item">
-                <div class="exp-img-wrapper">
-                    <img src="./assets/school.png" alt="St. Aloysius College" class="experience-img" />
-                </div>
-                <div class="experience-content">
-                    <h3>G.C.E. Advanced Level</h3>
-                    <div class="institution">St. Aloysius College, Galle</div>
-                    <div class="date">2010 - 2023</div>
-                    <p>Physical Science Stream.</p>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-org">
+                                <img src="./assets/school.png" alt="St. Aloysius College" class="timeline-org-img" />
+                                <div>
+                                    <h3>G.C.E. Advanced Level — Physical Science</h3>
+                                    <span class="timeline-company">St. Aloysius College, Galle</span>
+                                </div>
+                            </div>
+                            <span class="timeline-date">2010 — 2023</span>
+                        </div>
+                        <p>Physical Science stream with strong foundations in mathematics and applied physics, forming
+                            the analytical backbone of my engineering career.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-img-wrapper">
-                    <img src="./assets/project-lms.jpg" alt="University LMS Platform" class="project-img" />
-                    <div class="project-icon">📚</div>
-                </div>
-                <div class="project-content">
-                    <h3>University LMS Platform</h3>
-                    <div class="tech-stack">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>PHP</span>
-                        <span>JavaScript</span>
-                        <span>MySQL</span>
+    <section id="projects" class="section projects-section">
+        <div class="section-container">
+            <span class="section-label">Selected Work</span>
+            <h2 class="section-heading section-heading--center">Projects that <em>ship</em>.</h2>
+            <p class="section-subheading">Production systems I've architected, built, and deployed.</p>
+
+            <div class="projects-showcase">
+                <!-- Project 1 - Featured -->
+                <article class="project-featured">
+                    <div class="project-featured-img">
+                        <img src="./assets/project-theatrex.jpg" alt="TheatreX Platform" />
+                        <div class="project-overlay">
+                            <span class="project-overlay-label">Featured Project</span>
+                        </div>
                     </div>
-                    <p>Comprehensive online Learning Management System for user registration. Applied usability
-                        principles to enhance user navigation and experience.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/PasinduJayasinghe2004/LMS" class="project-link" target="_blank"
-                            rel="noopener noreferrer">
-                            <i class="fa-brands fa-github"></i> GitHub
-                        </a>
+                    <div class="project-featured-content">
+                        <div class="project-meta">
+                            <span class="project-type">Full Stack Platform</span>
+                            <span class="project-year">2025</span>
+                        </div>
+                        <h3>TheatreX — Smart Hospital Theatre Scheduling</h3>
+                        <p>Engineered a production-ready operation theatre scheduling system for hospital environments.
+                            Designed and implemented the Surgery Management Module with dynamic forms, real-time
+                            scheduling
+                            conflicts detection, and comprehensive patient management APIs with full test coverage.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>Express</span>
+                            <span>PostgreSQL</span>
+                            <span>Jest</span>
+                            <span>JWT Auth</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/PasinduJayasinghe2004/SDGP-Project" class="project-link-btn"
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-github"></i> Source Code
+                            </a>
+                            <a href="https://theatrex.lk" class="project-link-btn project-link-btn--primary"
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                            </a>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-img-wrapper">
-                    <img src="./assets/project-theatrex.jpg" alt="TheatreX - Hospital Theatre Scheduling"
-                        class="project-img" />
-                    <div class="project-icon">🏥</div>
-                </div>
-                <div class="project-content">
-                    <h3>TheatreX - Hospital Theatre Scheduling</h3>
-                    <div class="tech-stack">
-                        <span>React</span>
-                        <span>Node.js</span>
-                        <span>Express</span>
-                        <span>PostgreSQL</span>
-                        <span>Jest</span>
-                        <span>JWT</span>
-                    </div>
-                    <p>SDGP Project (Ongoing). Smart operation theatre scheduling system. Designed Surgery Management
-                        Module with dynamic forms and backend APIs. Built Patient management APIs with testing.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/PasinduJayasinghe2004/SDGP-Project" class="project-link"
-                            target="_blank" rel="noopener noreferrer">
-                            <i class="fa-brands fa-github"></i> GitHub
-                        </a>
-                        <a href="https://theatrex.lk" class="project-link" target="_blank" rel="noopener noreferrer">
-                            <i class="fa-solid fa-globe"></i> Live Site
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-img-wrapper">
-                    <img src="./assets/project-sustainability.jpg" alt="EcoFuture Web Development"
-                        class="project-img" />
-                    <div class="project-icon">🌱</div>
-                </div>
-                <div class="project-content">
-                    <h3>EcoFuture Web Development</h3>
-                    <div class="tech-stack">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                        <span>Responsive Design</span>
-                    </div>
-                    <p>Team Project at IIT. Built a fully responsive website to promote sustainability and climate
-                        awareness. Implemented modern layouts following accessibility best practices.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/PasinduJayasinghe2004/EcoFuture" class="project-link"
-                            target="_blank" rel="noopener noreferrer">
-                            <i class="fa-brands fa-github"></i> GitHub
-                        </a>
-                        <a href="https://pasindujayasinghe2004.github.io/EcoFuture/" class="project-link"
-                            target="_blank" rel="noopener noreferrer">
-                            <i class="fa-solid fa-globe"></i> Live Site
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-img-wrapper">
-                    <img src="./assets/project-ecommerce.png" alt="E-Commerce Platform" class="project-img" />
-                    <div class="project-icon">🛒</div>
-                </div>
-                <div class="project-content">
-                    <h3>E-Commerce Platform</h3>
-                    <div class="tech-stack">
-                        <span>React</span>
-                        <span>Node.js</span>
-                        <span>PostgreSQL</span>
-                        <span>Clerk Auth</span>
-                        <span>Vercel</span>
-                    </div>
-                    <p>Premium luxury clothing e-commerce platform. Full-stack implementation with secure
-                        authentication, admin dashboard for product management, and complete checkout flow.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/pasindujayasinghe2004" class="project-link" target="_blank"
-                            rel="noopener noreferrer">
-                            <i class="fa-brands fa-github"></i> GitHub
-                        </a>
-                        <a href="https://clothing-e-commerce-web-site.vercel.app/" class="project-link" target="_blank"
-                            rel="noopener noreferrer">
-                            <i class="fa-solid fa-globe"></i> Live Site
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-img-wrapper">
-                    <img src="./assets/project-fitness.png" alt="Fitness Gym Membership System" class="project-img" />
-                    <div class="project-icon">💪</div>
-                </div>
-                <div class="project-content">
-                    <h3>Fitness Gym Membership System</h3>
-                    <div class="tech-stack">
-                        <span>Java</span>
-                        <span>OOP</span>
-                        <span>GUI</span>
-                        <span>Console App</span>
-                    </div>
-                    <p>Java-based fitness gym membership system applying core OOP principles including inheritance,
-                        abstraction, and polymorphism. Manages tiered membership plans.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/pasindujayasinghe2004" class="project-link" target="_blank"
-                            rel="noopener noreferrer">
-                            <i class="fa-brands fa-github"></i> GitHub
-                        </a>
-                    </div>
+                </article>
+
+                <!-- Other Projects Grid -->
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-card-img">
+                            <img src="./assets/project-ecommerce.png" alt="E-Commerce Platform" />
+                        </div>
+                        <div class="project-card-body">
+                            <div class="project-meta">
+                                <span class="project-type">E-Commerce</span>
+                                <span class="project-year">2025</span>
+                            </div>
+                            <h3>Meril Luxury — Premium E-Commerce</h3>
+                            <p>Full-stack luxury clothing platform with Clerk authentication, admin dashboard,
+                                cart persistence, and complete checkout flow deployed on Vercel.</p>
+                            <div class="project-tech">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>PostgreSQL</span>
+                                <span>Clerk</span>
+                                <span>Vercel</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/pasindujayasinghe2004" class="project-link-btn"
+                                    target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                                <a href="https://clothing-e-commerce-web-site.vercel.app/" class="project-link-btn"
+                                    target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-card-img">
+                            <img src="./assets/project-lms.jpg" alt="University LMS" />
+                        </div>
+                        <div class="project-card-body">
+                            <div class="project-meta">
+                                <span class="project-type">EdTech</span>
+                                <span class="project-year">2024</span>
+                            </div>
+                            <h3>University LMS Platform</h3>
+                            <p>Comprehensive Learning Management System with user registration, course management, and
+                                usability-optimized navigation patterns.</p>
+                            <div class="project-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>PHP</span>
+                                <span>JavaScript</span>
+                                <span>MySQL</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/PasinduJayasinghe2004/LMS" class="project-link-btn"
+                                    target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-card-img">
+                            <img src="./assets/project-sustainability.jpg" alt="EcoFuture" />
+                        </div>
+                        <div class="project-card-body">
+                            <div class="project-meta">
+                                <span class="project-type">Web App</span>
+                                <span class="project-year">2024</span>
+                            </div>
+                            <h3>EcoFuture — Sustainability Platform</h3>
+                            <p>Fully responsive sustainability awareness website built with modern layouts, accessibility
+                                best practices, and performance-optimized assets.</p>
+                            <div class="project-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/PasinduJayasinghe2004/EcoFuture" class="project-link-btn"
+                                    target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                                <a href="https://pasindujayasinghe2004.github.io/EcoFuture/" class="project-link-btn"
+                                    target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-card-img">
+                            <img src="./assets/project-fitness.png" alt="Gym Management" />
+                        </div>
+                        <div class="project-card-body">
+                            <div class="project-meta">
+                                <span class="project-type">Desktop App</span>
+                                <span class="project-year">2024</span>
+                            </div>
+                            <h3>Gym Membership Management</h3>
+                            <p>Java-based membership system applying core OOP principles — inheritance, abstraction,
+                                polymorphism — for tiered plan management with GUI.</p>
+                            <div class="project-tech">
+                                <span>Java</span>
+                                <span>OOP</span>
+                                <span>GUI</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/pasindujayasinghe2004" class="project-link-btn"
+                                    target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </div>
@@ -324,26 +470,46 @@
 
     <!-- Contact Section -->
     <section id="contact" class="section contact-section">
-        <h2 class="section-title">Let's Connect</h2>
-        <p class="contact-intro">Ready to discuss opportunities or collaborate on projects?</p>
-        <div class="contact-links">
-            <a href="mailto:pasindu.20241670@iit.ac.lk" class="contact-pill">
-                <i class="fa-solid fa-envelope"></i> Email
-            </a>
-            <a href="tel:+94762639248" class="contact-pill">
-                <i class="fa-solid fa-phone"></i> +94 76 263 9248
-            </a>
-            <a href="https://linkedin.com/in/pasindu-jayasinghe-376209353" target="_blank" rel="noopener noreferrer"
-                class="contact-pill">
-                <i class="fa-brands fa-linkedin-in"></i> LinkedIn
-            </a>
-            <a href="https://github.com/pasindujayasinghe2004" target="_blank" rel="noopener noreferrer"
-                class="contact-pill">
-                <i class="fa-brands fa-github"></i> GitHub
-            </a>
+        <div class="section-container">
+            <span class="section-label">Get in Touch</span>
+            <h2 class="section-heading section-heading--center">Let's build something<br><em>remarkable</em>.</h2>
+            <p class="section-subheading">I'm always interested in discussing new projects, technical challenges,<br>
+                or opportunities to contribute to ambitious teams.</p>
+
+            <div class="contact-grid">
+                <a href="mailto:pasindu.20241670@iit.ac.lk" class="contact-card" id="contact-email">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span class="contact-card-label">Email</span>
+                    <span class="contact-card-value">pasindu.20241670@iit.ac.lk</span>
+                </a>
+                <a href="tel:+94762639248" class="contact-card" id="contact-phone">
+                    <i class="fa-solid fa-phone"></i>
+                    <span class="contact-card-label">Phone</span>
+                    <span class="contact-card-value">+94 76 263 9248</span>
+                </a>
+                <a href="https://linkedin.com/in/pasindu-jayasinghe-376209353" target="_blank"
+                    rel="noopener noreferrer" class="contact-card" id="contact-linkedin">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <span class="contact-card-label">LinkedIn</span>
+                    <span class="contact-card-value">Connect with me</span>
+                </a>
+                <a href="https://github.com/pasindujayasinghe2004" target="_blank" rel="noopener noreferrer"
+                    class="contact-card" id="contact-github">
+                    <i class="fa-brands fa-github"></i>
+                    <span class="contact-card-label">GitHub</span>
+                    <span class="contact-card-value">View my code</span>
+                </a>
+            </div>
         </div>
     </section>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <span class="footer-brand">Pasindu Jayasinghe</span>
+            <span class="footer-copy">© 2025 — Designed & Engineered with precision.</span>
+        </div>
+    </footer>
 
     <script src="./script.js"></script>
 </body>
